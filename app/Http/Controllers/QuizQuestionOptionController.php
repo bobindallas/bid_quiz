@@ -117,9 +117,13 @@ class QuizQuestionOptionController extends Controller
      * @param  \App\QuizQuestionOption  $quizQuestionOption
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QuizQuestionOption $quizQuestionOption)
-    {
-        //
+    public function destroy(int $quiz_question_option_id) {
+
+		 $quiz_question_option = QuizQuestionOption::with('quiz_question', 'quiz_question.quiz')->findOrFail($quiz_question_option_id);
+		 $quiz_question_option->delete();
+
+		 return redirect()->route('quiz_question_options.list', $quiz_question_option->quiz_question_id)->with('success', 'Option Deleted');
+
     }
 
 	 private function clear_correct($request) {

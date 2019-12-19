@@ -19,9 +19,8 @@ Breadcrumbs::for('quiz_question_options.create', function ($trail, $quiz_questio
 // Home > quiz_question_options > Edit
 Breadcrumbs::for('quiz_question_options.edit', function ($trail, $quiz_question_option) {
     $trail->parent('dashboard');
-    // $trail->push($quiz_question_option->quiz_question->quiz->name, route('quiz_question_options.list', $quiz_question_option->quiz_question->quiz->id));
     $trail->push($quiz_question_option->quiz_question->quiz->name, route('dashboard'));
-    $trail->push($quiz_question_option->quiz_question->name, route('quiz_questions.list', $quiz_question_option->quiz_question->id));
-    $trail->push($quiz_question_option->name, route('quiz_questions.list', $quiz_question_option->quiz_question->id));
+    $trail->push($quiz_question_option->quiz_question->name, route('quiz_questions.list', $quiz_question_option->quiz_question->quiz->id));
+    $trail->push($quiz_question_option->name, route('quiz_question_options.list', $quiz_question_option->quiz_question->id));
     $trail->push('Edit Option');
 });

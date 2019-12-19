@@ -31,7 +31,7 @@
 					<td>{{ $quiz_question_option->created_at->toFormattedDateString() }}</td>
 					<td>
 					<a href="{{ route('quiz_question_options.edit', ['quiz_question_id' => $quiz_question_option->id]) }}" title="Edit quiz_question Details"><i class="fa fa-pencil-square fa-2x"></i></a>&nbsp;&nbsp;
-					<form method="post" action="{{ route('quiz_question_options.destroy', ['quiz_question_option_id' => $quiz_question_option->id]) }}" style="display:inline;">@csrf @method('DELETE') <a onclick="if(confirm('Really delete this quiz_question?')) { this.parentNode.submit(); }" title="Delete this quiz_question"><i class="fa fa-trash fa-2x" style="color:red;"></i></a></form>
+					<form method="post" action="{{ route('quiz_question_options.destroy', ['quiz_question_option_id' => $quiz_question_option->id]) }}" style="display:inline;">@csrf @method('DELETE') <a onclick="if(confirm('Really delete {{ $quiz_question_option->name }}?')) { this.parentNode.submit(); }" title="Delete this quiz_question"><i class="fa fa-trash fa-2x" style="color:red;"></i></a></form>
 				</td>
 				</tr>
 				@endforeach

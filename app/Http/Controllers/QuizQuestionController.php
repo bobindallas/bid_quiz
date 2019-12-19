@@ -116,8 +116,11 @@ class QuizQuestionController extends Controller {
      * @param  \App\QuizQuestion  $quizQuestion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QuizQuestion $quizQuestion)
-    {
-        //
+    public function destroy(int $quiz_question_id) {
+
+		 $quiz_question = QuizQuestion::with('quiz')->findOrFail($quiz_question_id);
+		 $quiz_question->delete();
+
+		 return redirect()->route('quiz_questions.list', $quiz_question->quiz->id)->with('success', 'Question Deleted');
     }
 }

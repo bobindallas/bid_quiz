@@ -7,7 +7,7 @@
 		Quizzes
 	</div>
 	<div class="card-body">
-	<div><h3>Your score {{ $percentile }}</h3></div>
+	<div><h3>Your score {{ $percentile }}&#37;</h3></div>
 	<div><h3>{{ $comment }}</h3></div>
 	<div style="padding-top:10px;"><a href="{{ route('home') }}" class="btn btn-info">Home</a></div>
 	</div>

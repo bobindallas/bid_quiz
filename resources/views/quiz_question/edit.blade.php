@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content_header')
-	{{ Breadcrumbs::render('quizzes.edit', $quiz_question) }}
+	{{ Breadcrumbs::render('quiz_questions.edit', $quiz_question) }}
 @stop
 
 @section('content')

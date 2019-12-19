@@ -97,7 +97,6 @@ class QuizController extends Controller
 
 		 return redirect()->route('dashboard')->with('success', 'Quiz Saved');
 
-        //
     }
 
     /**
@@ -106,8 +105,10 @@ class QuizController extends Controller
      * @param  \App\Quiz  $quiz
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Quiz $quiz)
-    {
-        //
+    public function destroy(Quiz $quiz) {
+
+		 $quiz->delete();
+
+		 return redirect()->route('dashboard')->with('success', 'Quiz Deleted');
     }
 }

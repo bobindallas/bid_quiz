@@ -112,6 +112,7 @@ class SiteController extends Controller
 		];
 
 		$comment = $accolades[$percentile];
+		$percentile *= 10;
 		// dd($comment);
 		// dd($percentile);
 

@@ -32,7 +32,7 @@
 					<td>
 					<a href="{{ route('quizzes.edit', ['quiz' => $quiz->id]) }}" title="Edit Quiz Details"><i class="fa fa-pencil-square fa-2x"></i></a>&nbsp;&nbsp;
 					<a href="{{ route('quiz_questions.list', ['quiz_id' => $quiz->id]) }}" title="Edit Quiz Questions"><i class="fa fa-list fa-2x"></i></a>&nbsp;&nbsp;
-					<form method="post" action="{{ route('quizzes.destroy', ['quiz' => $quiz->id]) }}" style="display:inline;">@csrf @method('DELETE') <a onclick="if(confirm('Really delete this quiz?')) { this.parentNode.submit(); }" title="Delete this quiz"><i class="fa fa-trash fa-2x" style="color:red;"></i></a></form>
+					<form method="post" action="{{ route('quizzes.destroy', ['quiz' => $quiz->id]) }}" style="display:inline;">@csrf @method('DELETE') <a onclick="if(confirm('Really delete {{ $quiz->name }}?')) { this.parentNode.submit(); }" title="Delete this quiz"><i class="fa fa-trash fa-2x" style="color:red;"></i></a></form>
 				</td>
 				</tr>
 				@endforeach

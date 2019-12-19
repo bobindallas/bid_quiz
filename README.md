@@ -36,7 +36,7 @@ There can olny be one correct answer per question.
 
 Once you have created a quiz click the Home link at the top left and your quiz should show up in the list.
 
-Your answere are stored in the session so there is a chance that it could get out of whack (this is not a real app of course).  If you run into any problems you can just clear your cookies for the site and you should be fine.  When you complete the quiz your session is cleared so you can re-take the quiz or take another.  It's not smart enough to pick up where you left off if you quit before you complete the quiz or anything like that.
+Your answers are stored in the session so there is a chance that it could get out of whack (this is not a real app of course).  If you run into any problems you can just clear your cookies for the site and you should be fine.  When you complete the quiz your session is cleared so you can re-take the quiz or take another.  It's not smart enough to pick up where you left off if you quit before you complete the quiz or anything like that.
 
 #### Tests:
 

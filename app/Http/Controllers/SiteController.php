@@ -40,6 +40,10 @@ class SiteController extends Controller
 
 	public function answer(Request $request, int $quiz_id) {
 
+      $this->validate($request,[
+         'answer' => 'required'
+      ]);
+
 		$quiz   = Quiz::with('quiz_question')->findOrFail($quiz_id);
 		$answer = QuizQuestionOption::findOrFail($request->answer);
 

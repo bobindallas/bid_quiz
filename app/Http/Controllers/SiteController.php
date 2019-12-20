@@ -23,17 +23,8 @@ class SiteController extends Controller
 
 		$quiz = Quiz::with('quiz_question', 'quiz_question.quiz_question_option')->findOrFail($quiz_id);
 
-		// hackety hack... surely there's a better way to do this
-		$fu   = [];
-		foreach($quiz->quiz_question as $k => $v) {
-			if ($v->active) {
-				$fu[] = $v->id;
-			}
-		}
-
 		$question_index = (int) abs($question_index);
-		$questions      = collect($fu); // let's make a collection...
-		$question_index = ($question_index >= 0 && $question_index <= $questions->count()-1) ? $question_index : 0;
+		$question_index = ($question_index >= 0 && $question_index <= $quiz->quiz_question->count()-1) ? $question_index : 0;
 
 		return view('site.quiz', compact('quiz', 'question_index'));
 	}

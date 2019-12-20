@@ -21,9 +21,6 @@ class QuizQuestionController extends Controller {
 		 $quiz           = Quiz::findOrFail($quiz_id); // need this even if no questions found
 		 $quiz_questions = QuizQuestion::where(['quiz_id' => $quiz_id])->get();
 
-		 // dd($quiz_questions);
-		 // dd($quiz);
-
 		 return view('quiz_question.index', compact('quiz', 'quiz_questions'));
 
 	 }

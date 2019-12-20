@@ -40,7 +40,6 @@ class QuizController extends Controller
          'name' => 'required|max:255|unique:quizzes,name'
       ]); 
 
-		 // dd($request);
 		 $quiz = new Quiz();
 
 		 $quiz->name        = $request->get('name');
@@ -88,8 +87,6 @@ class QuizController extends Controller
          // 'name' => 'required|max:255|unique:quizzes,name'
       ]); 
 
-		 // dd($request);
-		 // dd($quiz);
 		 $quiz->name        = $request->get('name');
 		 $quiz->description = $request->get('description');
 		 $quiz->active      = $request->get('active');

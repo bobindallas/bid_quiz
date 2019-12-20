@@ -99,7 +99,7 @@ class QuizQuestionOptionController extends Controller
 
 		 $this->clear_correct($request);
 
-		 $quiz_question_option = QuizQuestionOption::with('quiz_question', 'quiz_question.quiz')->findOrFail($quiz_question_option_id);
+		 $quiz_question_option = QuizQuestionOption::findOrFail($quiz_question_option_id);
 
 		 $quiz_question_option->name    = $request->get('name');
 		 $quiz_question_option->correct = $request->get('correct');
@@ -119,7 +119,7 @@ class QuizQuestionOptionController extends Controller
      */
     public function destroy(int $quiz_question_option_id) {
 
-		 $quiz_question_option = QuizQuestionOption::with('quiz_question', 'quiz_question.quiz')->findOrFail($quiz_question_option_id);
+		 $quiz_question_option = QuizQuestionOption::findOrFail($quiz_question_option_id);
 		 $quiz_question_option->delete();
 
 		 return redirect()->route('quiz_question_options.list', $quiz_question_option->quiz_question_id)->with('success', 'Option Deleted');

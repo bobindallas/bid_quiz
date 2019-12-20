@@ -73,10 +73,6 @@ class SiteController extends Controller
 
 		}
 
-		die;
-		dd($request->session());
-		dd($answer);
-		dd($request);
 	}
 
 	public function results(Request $request, Quiz $quiz) {
@@ -84,10 +80,9 @@ class SiteController extends Controller
 		$s_key  = 'quiz_' . $quiz->id;
 		$stats  = $request->session()->get($s_key);
 		$request->session()->forget($s_key);
-		// dd($stats);
 
 		try {
-			$percentile = sprintf("%d", round($stats['qright'] / $stats['qcount'] * 10));
+			$percentile = sprintf("%d", round(($stats['qright'] / $stats['qcount']) * 10));
 		} catch (Exception $e) {
 			$percentile = 0;
 		}
@@ -106,10 +101,8 @@ class SiteController extends Controller
 			0 => 'You\'re not even trying'
 		];
 
-		$comment = $accolades[$percentile];
+		$comment     = $accolades[$percentile];
 		$percentile *= 10;
-		// dd($comment);
-		// dd($percentile);
 
 		return view('site.results', compact('quiz', 'percentile', 'comment'));
 

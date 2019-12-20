@@ -14,4 +14,19 @@ class Quiz extends Model {
 	public function setActiveAttribute($value) {
 		$this->attributes['active'] = (! is_null($value) && isset($value)) ? $value : 0;  
 	}
+
+	public static function boot() {
+	
+		parent::boot();
+
+		// cascade deletes
+		self::deleting(function($quiz) {
+
+			$quiz->quiz_question()->each(function($quiz_question) {
+				$quiz_question->delete();	
+			});
+		
+		});
+	
+	}
 }

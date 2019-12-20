@@ -27,7 +27,6 @@ We're using:
 Not here:
 
 - Any type of Auth / Security - beyond the scope of this exercise.
-- Cascading deletes - was going to add them but don't have time at the moment - may come back and add them just because it bugs me that they're not there.
 
 You can create a quiz using the dashboard link at the top right.
 The workflow is simple:

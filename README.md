@@ -29,18 +29,18 @@ Not here:
 - Any type of Auth / Security - beyond the scope of this exercise.
 
 You can create a quiz using the dashboard link at the top right.
-The workflow is simple:
-Create a Quiz, then add questions, then add options / answers.
-There can olny be one correct answer per question.
-
+The workflow is simple:  
+Create a quiz, then add questions, then add options / answers.  
+There can only be one correct answer per question.  
+  
 Once you have created a quiz click the Home link at the top left and your quiz should show up in the list.
-
+  
 Your answers are stored in the session so there is a chance that it could get out of whack (this is not a real app of course).  If you run into any problems you can just clear your cookies for the site and you should be fine.  When you complete the quiz your session is cleared so you can re-take the quiz or take another.  It's not smart enough to pick up where you left off if you quit before you complete the quiz or anything like that.
-
+  
 #### Tests:
-
+  
 No tests for this app at the moment.
-
+  
 #### License:
-
+  
 [MIT license](http://opensource.org/licenses/MIT)

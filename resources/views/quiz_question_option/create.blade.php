@@ -20,11 +20,11 @@
 --}}
 			<div class="form-group">
 				<label for="active">Correct Answer</label>
-				<input type="checkbox" id="correct" name="correct" value="1" checked> (only 1 answer is correct)
+				<input type="checkbox" id="correct" name="correct" value="1"> (only 1 answer is correct)
 			</div>
 			<div class="form-group">
 				<label for="active">Active</label>
-				<input type="checkbox" id="active" name="active" value="1">
+				<input type="checkbox" id="active" name="active" value="1" checked>
 				<input type="hidden" id="quiz_id" name="quiz_id" value="{{ $quiz_question->quiz->id }}">
 				<input type="hidden" id="quiz_question_id" name="quiz_question_id" value="{{ $quiz_question->id }}">
 			</div>
